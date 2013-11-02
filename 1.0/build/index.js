@@ -93,11 +93,14 @@ KISSY.add('gallery/confirm/1.0/index',function (S, Node,Base) {
 		bindEvent : function () {
 			var self = this;
 			var box = this.confirmBox;
+
 			box.delegate('click' , '.cancel' , function (e) {
 				self.get('onCancel')();
+				self.fire('cancel');
 				self.destroy();
 			}).delegate('click' , '.confirm' , function (e) {
 				self.get('onConfirm')();
+				self.fire('confirm');
 				self.destroy();
 			}).delegate('touchstart' , 'em' , function (e) {
 				$(e.currentTarget).addClass('press');
