@@ -1,0 +1,14 @@
+{
+    "name": "confirm",
+    "version": "1.0",
+    "desc": "",
+    "cover": "",
+    "tag":"弹出框",
+    "author": {
+        "name": "栋寒",
+        "email": "donghan@taobao.com",
+        "page": ""
+    },
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}
