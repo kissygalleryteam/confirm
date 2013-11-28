@@ -32,13 +32,13 @@ KISSY.add(function (S, Node,Base) {
 		
 		// 获得弹窗内部的dom字符串
 		getDomStr : function () {
-			var self = this , type = self.get('type') , tip = self.get('tip') , wrap = self.get('wrap').replace('#' , '');
+			var self = this , type = self.get('type') , tip = self.get('tip') , wrap = self.get('wrap').replace('.' , '');
 			var arr = [
-				'<div id="' + wrap  + '" class="ks-w-confirm" style="visibility: hidden;">',
+				'<div class="ks-w-confirm ' + wrap + '" style="visibility: hidden;">',
 					'<div class="mask"></div>',
 					'<div class="box">',
 						'<div class="content">' + tip + '</div>',
-						'<div class="action">' + (type === 'confirm' ? ' <em class="cancel">取消</em>' : '') + '<em class="confirm">确定</em></div>',
+						'<div class="action">' + (type === 'confirm' ? ' <em class="cancel">' + self.get('cancelText') + '</em>' : '') + '<em class="confirm">' + self.get('confirmText') + '</em></div>',
 					'</div>',
 				'</div>'
 			];	
@@ -128,6 +128,12 @@ KISSY.add(function (S, Node,Base) {
 			},
 			onCancel : {
 				value : function () {}	
+			},
+			confirmText : {
+				value : '确定'			  
+			},
+			cancelText : {
+				value : '取消'			 
 			}
 		}
 	});

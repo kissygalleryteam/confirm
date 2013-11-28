@@ -26,8 +26,8 @@ pre {background: #eee; }
 .ks-w-confirm .action em{color:#000;border-radius:3px;display:inline-block;text-shadow:0 1px 0 #fff;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAABFCAIAAADmYgDdAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMDhCMjdDMTE2MjA2ODExODA4MzlEQURDN0M4MDBGMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1Q0JGNDVFQTVDQTMxMUUyOEU2MEQwODY3NUYyQTlEMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1Q0JGNDVFOTVDQTMxMUUyOEU2MEQwODY3NUYyQTlEMCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDE4MDExNzQwNzIwNjgxMTgwODNCMUNEQ0Q2RjMyQUMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDA4QjI3QzExNjIwNjgxMTgwODM5REFEQzdDODAwRjIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5urHc5AAAANElEQVR42mL5/PkzAypg+f//P5oQEwMGGBSqBoVGGptFf+OHkCNGw2tQJV8aa6S/KoAAAwCG45k0Noz+BAAAAABJRU5ErkJggg==') repeat-x;background-size:3px 34px;width:105px;height:33px;font-weight:bold;margin: 0 5px;text-align:center;line-height:34px; font-style: normal; }
 .ks-w-confirm .action em.press { background:#c1c1c1;}
 
-#customWrap .box { height: 130px; background: #4095ec; }
-#customWrap .content { height: 80px; }
+.customWrap .box { height: 130px; background: #4095ec; }
+.customWrap .content { height: 80px; }
 </style>
 
 <h2>confirm的demo</h2>
@@ -67,7 +67,7 @@ confirm.on('confirm' , function (e) {
 		<button id="btn3">点击:插入html代码的confirm对话框</button>
 		<pre>var customHtml = '自定义字符串'；
 new Confirm({
-	wrap : '#customWrap',
+	wrap : '.customWrap',
 	tip : customHtml,
 	onConfirm : function () {
 		alert('我确认');
@@ -132,14 +132,16 @@ new Confirm({
 
 		btn3.on('click' , function (e) {
 			new Confirm({
-				wrap : '#customWrap',
+				wrap : '.customWrap',
 				tip : customHtml,
 				onConfirm : function () {
 					alert('我确认');
 				},
 				onCancel : function () {
 					alert('放弃');	
-				}
+				},
+				confirmText : '确认文本',
+				cancelText : '取消文本'
 			});	
 		});
 		
