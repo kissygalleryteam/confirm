@@ -40,7 +40,7 @@ KISSY.add('gallery/confirm/1.0/index',function (S, Node,Base) {
 		getDomStr : function () {
 			var self = this , type = self.get('type') , tip = self.get('tip') , wrap = self.get('wrap').replace('.' , '');
 			var arr = [
-				'<div class="ks-w-confirm ' + wrap + '" style="visibility: hidden;">',
+				'<div class="ks-w-confirm ' + (wrap === 'ks-w-confirm' ? '' : wrap) + '" style="visibility: hidden;">',
 					'<div class="mask"></div>',
 					'<div class="box">',
 						'<div class="content">' + tip + '</div>',
@@ -121,7 +121,7 @@ KISSY.add('gallery/confirm/1.0/index',function (S, Node,Base) {
 		ATTRS : {
 			
 			wrap : {
-				value : '#ks-w-confirm'
+				value : '.ks-w-confirm'
 			},
 			type : {
 				value : 'confirm'	
