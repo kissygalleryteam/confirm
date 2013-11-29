@@ -112,9 +112,11 @@ new Confirm({
 				}
 			});
 			confirm.on('confirm' , function (e) {
-				alert('第二次确认');
+				alert('第二次确认，事件监听返回false，将保留box');
+				return false;
 			}).on('cancel' , function (e) { 
 				alert('第二次放弃');
+				return false;
 			});	
 		});
 
@@ -136,6 +138,7 @@ new Confirm({
 				tip : customHtml,
 				onConfirm : function () {
 					alert('我确认');
+					
 				},
 				onCancel : function () {
 					alert('放弃');	
