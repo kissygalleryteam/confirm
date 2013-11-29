@@ -89,13 +89,18 @@ KISSY.add(function (S, Node,Base) {
 			var box = this.confirmBox;
 
 			box.delegate('click' , '.cancel' , function (e) {
-				self.get('onCancel')();
-				self.fire('cancel');
-				self.destroy();
+				var res1 = self.get('onCancel')();
+				var res = self.fire('cancel');
+				if ((res1 !== false) && (res !== false)) {
+					self.destroy();
+				}
 			}).delegate('click' , '.confirm' , function (e) {
-				self.get('onConfirm')();
-				self.fire('confirm');
-				self.destroy();
+				var res1 = self.get('onConfirm')();
+				var res = self.fire('confirm');
+
+				if ((res1 !== false) && (res !== false)) {
+					self.destroy();
+				}
 			}).delegate('touchstart' , 'em' , function (e) {
 				$(e.currentTarget).addClass('press');
 			}).delegate('touchend' , 'em' , function (e) {
